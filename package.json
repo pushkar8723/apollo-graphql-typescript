@@ -1,0 +1,43 @@
+{
+  "name": "netlify-graphql-react",
+  "version": "1.0.0",
+  "description": "Template for netlify graphql react projects",
+  "main": "index.js",
+  "scripts": {
+    "build:lambda": "tsc src/lambda/graphql.ts --esModuleInterop --outDir src/lambda/dist",
+    "build:client": "webpack --mode production",
+    "build": "run-p build:**",
+    "start:dev-lambda": "tsc src/lambda/graphql.ts --esModuleInterop -w --outDir src/lambda/dist",
+    "start:dev-client": "webpack-dev-server --mode development --inline --hot",
+    "start:dev": "run-p start:dev-lambda start:dev-client"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link-http": "^1.5.17",
+    "apollo-server-lambda": "^2.13.0",
+    "graphql": "^15.0.0",
+    "react": "^16.13.1",
+    "react-apollo": "^2.5.8",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "graphql-tag": "^2.10.3",
+    "html-webpack-plugin": "^4.3.0",
+    "netlify-lambda": "^1.6.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

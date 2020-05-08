@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  functions = "src/lambda/dist"
+  publish = "dist/client"
+
+[dev]
+  framework = "#custom"
+  command = "npm run start:dev"
+  port = 8723
+  targetPort = 8080
