@@ -48,6 +48,8 @@ Start netlify dev server
 netlify dev
 ```
 
+App is now running on [http://localhost:3000/](http://localhost:3000/).
+
 ## Features
 
 - [x] Fully typed
@@ -57,7 +59,7 @@ netlify dev
 
 ## Stateful App
 
-If you wanted to create a serverless stateful app. Netlify got you covered. Netlify has [FaunaDB](https://fauna.com/) add on. Using which you can quickly add a serverless database to your application. You can direclty import your GraphQL schema to create collections and use their GraphQL endpoints to query / mutate the data.
+If you wanted to create a serverless stateful app. Netlify got you covered. Netlify has [FaunaDB](https://fauna.com/) add on. Using which you can quickly add a serverless database to your application. You can direclty import your GraphQL schema on Fauna dashboard to create collections and use their GraphQL endpoints to query / mutate the data.
 
 To add FaunaDB to you application. Run following commands.
 
