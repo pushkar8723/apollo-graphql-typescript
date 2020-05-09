@@ -4,6 +4,8 @@ import gql from 'graphql-tag';
 
 export default function App() {
     return (
+        <>
+        <h1>It Works!</h1>
         <Query 
             query={gql`{
                 hello
@@ -16,13 +18,14 @@ export default function App() {
                 }
                 
                 if (error) {
-                    return <><div>Something went wrong!</div><div>{error.message}</div></>;
+                    return <><h3>Something went wrong!</h3><div>{error.message}</div></>;
                 }
 
                 if (data) {
-                    return <div>{data.hello}</div>
+                    return <h3>{data.hello}</h3>
                 }
             }}
         </Query>
+        </>
     );
 }

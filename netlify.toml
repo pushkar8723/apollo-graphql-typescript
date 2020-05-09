@@ -5,6 +5,6 @@
 
 [dev]
   framework = "#custom"
-  command = "npm run start:dev"
-  port = 8723
+  command = "npm run start"
+  port = 3000
   targetPort = 8080

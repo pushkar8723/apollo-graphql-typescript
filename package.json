@@ -1,18 +1,18 @@
 {
-  "name": "netlify-graphql-react",
+  "name": "apollo-graphql-typescript",
   "version": "1.0.0",
-  "description": "Template for netlify graphql react projects",
+  "description": "Template for serverless typed GraphQL app deployed on netlify",
   "main": "index.js",
   "scripts": {
-    "build:lambda": "tsc src/lambda/graphql.ts --esModuleInterop --outDir src/lambda/dist",
+    "build:lambda": "tsc -p src/lambda/tsconfig.json",
     "build:client": "webpack --mode production",
     "build": "run-p build:**",
-    "start:dev-lambda": "tsc src/lambda/graphql.ts --esModuleInterop -w --outDir src/lambda/dist",
+    "start:dev-lambda": "tsc -p src/lambda/tsconfig.json -w",
     "start:dev-client": "webpack-dev-server --mode development --inline --hot",
-    "start:dev": "run-p start:dev-lambda start:dev-client"
+    "start": "run-p start:**"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "pushkar8723@gmail.com",
+  "license": "MIT",
   "dependencies": {
     "apollo-cache-inmemory": "^1.6.5",
     "apollo-client": "^2.6.8",

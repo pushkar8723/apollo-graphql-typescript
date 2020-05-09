@@ -14,8 +14,7 @@ export default {
 
     },
     devServer: {
-        open: false,
-        contentBase: './dist/client',
+        port: 8080,
         watchOptions: {
             poll: true,
             ignored: /node_modules/,
