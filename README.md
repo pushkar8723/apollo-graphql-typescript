@@ -56,6 +56,8 @@ App is now running on [http://localhost:3000/](http://localhost:3000/).
 - [x] Automated deployment
 - [x] Hot Reloading for client
 - [x] Watch and rebuild for GraphQL server
+- [x] Lint check on each commit
+- [x] Automatic type generation based on GraphQL schema
 
 ## Stateful App
 
