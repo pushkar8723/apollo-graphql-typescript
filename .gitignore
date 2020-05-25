@@ -2,3 +2,5 @@
 .netlify
 dist
 node_modules
+.vscode
+generated

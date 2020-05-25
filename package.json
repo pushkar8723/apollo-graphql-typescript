@@ -6,10 +6,12 @@
   "scripts": {
     "build:lambda": "tsc -p src/lambda/tsconfig.json",
     "build:client": "webpack --mode production",
-    "build": "run-p build:**",
+    "build": "graphql-codegen && run-p build:**",
     "start:dev-lambda": "tsc -p src/lambda/tsconfig.json -w",
     "start:dev-client": "webpack-dev-server --mode development --inline --hot",
-    "start": "run-p start:**"
+    "start:dev-generate": "graphql-codegen -w",
+    "start": "run-p start:**",
+    "check:lint": "eslint src/ --ext .tsx,.ts,.js,.jsx"
   },
   "author": "pushkar8723@gmail.com",
   "license": "MIT",
@@ -19,6 +21,7 @@
     "apollo-link-http": "^1.5.17",
     "apollo-server-lambda": "^2.13.0",
     "graphql": "^15.0.0",
+    "graphql-tag": "^2.10.3",
     "react": "^16.13.1",
     "react-apollo": "^2.5.8",
     "react-dom": "^16.13.1"
@@ -27,17 +30,32 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/register": "^7.9.0",
+    "@graphql-codegen/cli": "^1.14.0",
+    "@graphql-codegen/typescript": "^1.14.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
+    "@typescript-eslint/eslint-plugin": "^3.0.0",
+    "@typescript-eslint/parser": "^3.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "graphql-tag": "^2.10.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
     "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
     "netlify-lambda": "^1.6.3",
     "npm-run-all": "^4.1.5",
     "typescript": "^3.8.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run check:lint"
+    }
   }
 }

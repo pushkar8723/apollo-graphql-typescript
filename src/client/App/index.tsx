@@ -6,28 +6,33 @@ export default function App() {
     return (
         <div style={{ textAlign: 'center' }}>
             <img
-                src='https://repository-images.githubusercontent.com/262431185/a69fe580-922a-11ea-96b6-4108819fc1d9'
+                alt="Hero"
+                src="https://repository-images.githubusercontent.com/262431185/a69fe580-922a-11ea-96b6-4108819fc1d9"
                 style={{ maxWidth: '640px' }}
             />
             <h1>Apollo GraphQL TypeScript</h1>
-            <Query 
+            <Query
                 query={gql`{
                     hello
                 }`}
                 fetchPolicy="network-only"
             >
-                {({ loading, error, data}: QueryResult) => {
+                {({ loading, error, data }: QueryResult) => {
                     if (loading) {
                         return <div>Loading...</div>;
                     }
-                    
                     if (error) {
-                        return <><h3>Something went wrong!</h3><div>{error.message}</div></>;
+                        return (
+                            <>
+                                <h3>Something went wrong!</h3>
+                                <div>{error.message}</div>
+                            </>
+                        );
                     }
-
                     if (data) {
-                        return <h3>{data.hello}</h3>
+                        return <h3>{data.hello}</h3>;
                     }
+                    return null;
                 }}
             </Query>
         </div>
